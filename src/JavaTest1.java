@@ -17,20 +17,28 @@ public class JavaTest1 {
 		Scanner sc = new Scanner(System.in);
 		sc.useLocale(Locale.US);
 		
-		System.out.print("Zadaj cele cislo: ");
-		
-		int a = sc.nextInt();
-		sc.nextLine();
-		
-		
-		
+		System.out.print("Zadaj realne cislo: ");
+		double a = sc.nextDouble();
 		System.out.println();
 		
-		int aa = (int) (a / 100);
-		int ab = (int) ((a - (aa * 100)) / 10);
-		int ac = a - (aa * 100) - (ab * 10);
+		System.out.print("Zadaj exponent: ");
+		int b = sc.nextInt();
+		System.out.println();
 		
-		System.out.println("" + aa + "  " + ab + "  " + ac);
+		power(a, b);
+		
+		System.out.print("Zadaj cele cislo: ");
+//		
+//		int a = sc.nextInt();
+//		sc.nextLine();
+//		
+//		System.out.println();
+//		
+//		int aa = (int) (a / 100);
+//		int ab = (int) ((a - (aa * 100)) / 10);
+//		int ac = a - (aa * 100) - (ab * 10);
+//		
+//		System.out.println("" + aa + "  " + ab + "  " + ac);
 	}
 	
 	/**
@@ -65,6 +73,18 @@ public class JavaTest1 {
 		System.out.println();
 		
 		System.out.println("Hex " + a + b + " = Dec " + c);
+	}
+	
+	static void power(double x, int n) {
+		double x_tmp;
+		for (int a = 1; a <= n; x++) {
+			x_tmp = x;
+			for (int b = 1; b < a; b++) {
+				x_tmp *= x_tmp;
+			}
+			System.out.println("" + x + " na " + a + ". = " + x_tmp);
+			
+		}
 	}
 
 }
